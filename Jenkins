@@ -1,1 +1,9 @@
+node(){
+   stage("Checkout"){
+   checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'gitcreds', url: 'https://github.com/muraliphani/rentalcarsv1.2.git']]])
+   }
 
+   stage("MavenBuild"){
+   sh "mvn package"
+   }
+}
