@@ -6,7 +6,7 @@ node(){
    stage("MavenBuild"){
    sh "mvn package"
    }
-   stage("docker"){
+   stage("docker test"){
 
    }
 }
